@@ -1,6 +1,6 @@
 {
-  "version": "v0.7.0",
-  "rev": "v0.7.0",
-  "hash": "sha256-9iwrwQGpryGyEUVB2reodIxuEQHkXPA4P5IYKj18elI=",
-  "vendorHash": "sha256-AtYLxR7Fw3+IOSeuPXlq4vMsnS+7MMaFANZDg0yvCl8="
+  "version": "unstable-b952e69a61b8",
+  "rev": "b952e69a61b88a9afb5ee631dbf9348c319cc251",
+  "hash": "sha256-wis2q5C6gBOKQuwLORr/uYnUzHcyhC39RvoOPIiI0vA=",
+  "vendorHash": "sha256-rGwVsDgcNGWppte0BXQF9p0pKbnjqeNBRn5oNxrxsjU="
 }
