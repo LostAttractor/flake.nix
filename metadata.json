@@ -11,6 +11,12 @@
       "rev": "79d3fd25f4337de6884779bb7eda4681b54d776d",
       "hash": "sha256-FbyvrLGcGqT1X6lPoLv3KXQodFWGTCAOGTtRySLhTU0=",
       "vendorHash": "sha256-HLBvvCwa6AxhR/Y30hyymNIStYsUbIHY0eQBe2/IiOI="
+    },
+    "experiment": {
+      "version": "experiment-2025-3-18.36a2fc2",
+      "rev": "36a2fc296c69846464bd0aa7a63dc8d848475e21",
+      "hash": "sha256-gAEXWLPfEA/hYWCN2OK07ShF3fr2W4iqATZdDGiJIYg=",
+      "vendorHash": "sha256-w9Z0qGUjHvLJW81zkcwekSQXUVc0kUt3bbtOx3YQgns="
     }
   }
 }
