@@ -63,6 +63,12 @@ in
         '';
       };
 
+      subscriptionPath = mkOption {
+        type = with types; (nullOr str);
+        default = null;
+        description = "The path which contains subscription files.";
+      };
+
       openFirewall = mkOption {
         type = types.submodule {
           options = {
@@ -176,7 +182,8 @@ in
                 ""
                 "${daeBin} run --disable-timestamp -c ${configPath}"
               ];
-              Environment = "DAE_LOCATION_ASSET=${cfg.assetsPath}";
+              Environment = "DAE_LOCATION_ASSET=${cfg.assetsPath}" +
+                lib.optionalString (cfg.subscriptionPath != null) " DAE_LOCATION_SUBSCRIPTION=${cfg.subscriptionPath}";
               TimeoutStartSec = 120;
             };
           };
