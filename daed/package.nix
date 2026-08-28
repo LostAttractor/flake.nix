@@ -1,16 +1,17 @@
 {
-  pnpm,
+  pnpm_10,
   fetchPnpmDeps,
   pnpmConfigHook,
   nodejs,
   stdenv,
   clang,
-  buildGoModule,
+  buildGoLatestModule,
   fetchFromGitHub,
   lib,
 }:
 
 let
+  pnpm = pnpm_10;
   metadata = (builtins.fromJSON (builtins.readFile ../metadata.json)).daed.release;
   pname = "daed";
   inherit (metadata) version;
@@ -55,7 +56,7 @@ let
     '';
   };
 in
-buildGoModule rec {
+buildGoLatestModule rec {
   inherit pname version src;
   sourceRoot = "${src.name}/wing";
 
