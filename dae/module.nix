@@ -65,6 +65,19 @@ in
         '';
       };
 
+      cachePath = mkOption {
+        type = with types; (nullOr str);
+        default = null;
+        example = "/var/lib/dae";
+        description = ''
+          Writable state directory for certificates, subscription caches, runtime
+          state and Surge resources. Sets `DAE_LOCATION_CACHE`; when unset or empty,
+          dae uses `/var/lib/dae`.
+          Relative local subscription paths are resolved from the main configuration
+          directory, independently of this option.
+        '';
+      };
+
       openFirewall = mkOption {
         type = types.submodule {
           options = {
@@ -179,7 +192,9 @@ in
                 ""
                 "${daeBin} run --disable-timestamp -c ${configPath}"
               ];
-              Environment = "DAE_LOCATION_ASSET=${cfg.assetsPath}";
+              Environment =
+                "DAE_LOCATION_ASSET=${cfg.assetsPath}"
+                + lib.optionalString (cfg.cachePath != null) " DAE_LOCATION_CACHE=${cfg.cachePath}";
               TimeoutStartSec = 120;
             };
           };

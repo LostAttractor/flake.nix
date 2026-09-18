@@ -56,9 +56,17 @@
 
       # alternative of `assets`, a dir contains geo database.
       # assetsPath = "/etc/dae";
+
+      # Writable state directory (DAE_LOCATION_CACHE); dae defaults to /var/lib/dae.
+      # cachePath = "/var/lib/dae";
   };
 }
 ```
+
+`services.dae.cachePath` replaces `services.dae.subscriptionPath` and sets
+`DAE_LOCATION_CACHE`. It stores certificates, subscription caches, runtime state
+and Surge resources. Relative local subscription paths are resolved from the main
+configuration directory, independently of `cachePath`.
 
 ```nix
 # nixos configuration module
